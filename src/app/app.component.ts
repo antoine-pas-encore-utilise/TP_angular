@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { servivePosts } from './servivePosts';
+
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'mon-projet-angular';
+
+  posts: any[];
+
+  constructor(private postSer: servivePosts){
+    this.posts = this.postSer.posts;
+    console.log(this.posts);
+  }
+
+  ngOnInit(){
+  }
+
 }
